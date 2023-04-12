@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+ <html> 
+<head>
+<title>URL Extractor</title>
+ </head> 
+<body> 	
+<h1>URL Extractor</h1> 	
+<p>Enter a domain name and click the button to extract URLs with or without parameters from the domain and subdomains.
+</p> 	
+<form> 		
+<label for="domain">Domain Name:</label> 		
+<input type="text" id="domain" name="domain" required> 		
+<button type="submit" onclick="extractURLs()">Extract URLs</button>
+</form> 	
+<h2>Result:</h2> 	
+<p id="result"></p> 	
+<script> 		
+function extractURLs() { 			var domain = document.getElementById("domain").value; 			var urls = []; 			
+urls.push("https://" + domain); 			
+urls.push("http://" + domain); 			
+urls.push("https://www." + domain); 			
+urls.push("http://www." + domain); 			
+urls.push("https://subdomain." + domain); 			
+urls.push("http://subdomain." + domain); 			
+urls.push("https://subdomain." + domain + "/path"); 			urls.push("http://subdomain." + domain + "/path"); 			
+urls.push("https://subdomain." + domain + "/path?param=value"); 			
+urls.push("http://subdomain." + domain + "/path?param=value"); 			
+document.getElementById("result").innerHTML = urls.join("<br>"); 		} 
+</script>
+ </body> 
+</html>
