@@ -112,7 +112,7 @@ a:hover {
 
 </head>
 
-<body>
+<body onload="bodyload()">
 
   <input type="text" id="urlInput" placeholder="Enter a website URL">
 
@@ -180,7 +180,9 @@ a:hover {
     }).catch(error => console.log('Error:', error));
 
 }
- 
+ bodyload(){
+ alert("Body Loaded Successfully")
+ }
   </script>
 
 </body>
